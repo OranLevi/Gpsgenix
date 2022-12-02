@@ -1,24 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d40-WS-5TL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Speed-->
+        <scene sceneID="u3X-76-fDP">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="Fcw-r6-JK2" customClass="SpeedViewController" customModule="GPSLocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QUr-xI-IB7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedometer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UEL-27-WwL">
+                                <rect key="frame" x="167" y="48.5" width="80" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="0sX-yS-NHx"/>
+                                    <constraint firstAttribute="width" constant="80" id="73f-fz-12l"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hfn-O0-BWb">
+                                <rect key="frame" x="0.0" y="152" width="414" height="661"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpeedTableViewCell" id="JnF-K0-hNZ" customClass="SpeedTableViewCell" customModule="GPSLocation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JnF-K0-hNZ" id="JPS-10-jDj">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vu-T7-U8b">
+                                                    <rect key="frame" x="20" y="11.5" width="54" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="t1c-PT-7ZS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KMS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAd-q7-Wtz">
+                                                    <rect key="frame" x="90" y="11.5" width="59" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="59" id="Obr-8O-VAe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7vu-T7-U8b" firstAttribute="leading" secondItem="JPS-10-jDj" secondAttribute="leadingMargin" id="Q4k-ua-tpN"/>
+                                                <constraint firstItem="7vu-T7-U8b" firstAttribute="centerY" secondItem="JPS-10-jDj" secondAttribute="centerY" id="Z1v-Ka-FRM"/>
+                                                <constraint firstItem="fAd-q7-Wtz" firstAttribute="leading" secondItem="7vu-T7-U8b" secondAttribute="trailing" constant="16" id="ba0-cZ-kzM"/>
+                                                <constraint firstItem="fAd-q7-Wtz" firstAttribute="centerY" secondItem="JPS-10-jDj" secondAttribute="centerY" id="tDm-Sm-f1l"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="speedLABL" destination="fAd-q7-Wtz" id="g4t-lZ-b1x"/>
+                                            <outlet property="speedLabel" destination="7vu-T7-U8b" id="dAW-EK-J4X"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hb7-ix-YyG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hfn-O0-BWb" firstAttribute="leading" secondItem="hb7-ix-YyG" secondAttribute="leading" id="0b1-Cm-tyj"/>
+                            <constraint firstItem="hfn-O0-BWb" firstAttribute="leading" secondItem="hb7-ix-YyG" secondAttribute="leading" id="1qv-Z7-K0M"/>
+                            <constraint firstItem="hb7-ix-YyG" firstAttribute="bottom" secondItem="hfn-O0-BWb" secondAttribute="bottom" id="GFy-xn-YPI"/>
+                            <constraint firstItem="hb7-ix-YyG" firstAttribute="trailing" secondItem="hfn-O0-BWb" secondAttribute="trailing" id="H5H-t1-ZKS"/>
+                            <constraint firstItem="hb7-ix-YyG" firstAttribute="trailing" secondItem="hfn-O0-BWb" secondAttribute="trailing" id="JVk-pE-HCW"/>
+                            <constraint firstItem="UEL-27-WwL" firstAttribute="centerX" secondItem="QUr-xI-IB7" secondAttribute="centerX" id="L4o-oq-KJU"/>
+                            <constraint firstItem="UEL-27-WwL" firstAttribute="top" secondItem="hb7-ix-YyG" secondAttribute="top" id="b9r-9c-L0S"/>
+                            <constraint firstItem="hfn-O0-BWb" firstAttribute="top" secondItem="UEL-27-WwL" secondAttribute="bottom" constant="16" id="iLr-TA-7QF"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Speed" image="speedometer" catalog="system" id="uNJ-Yu-Wfb"/>
+                    <connections>
+                        <outlet property="speedTableView" destination="hfn-O0-BWb" id="cOT-z4-LVI"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yqF-1p-aii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="493.52678571428567"/>
+        </scene>
+        <!--My Location-->
+        <scene sceneID="NbG-LU-RP0">
+            <objects>
+                <viewController id="QB3-OS-FIO" customClass="MyLocationViewController" customModule="GPSLocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7FR-NF-NKB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0x8-OV-I2E">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                                <standardMapConfiguration key="preferredConfiguration" showsTraffic="YES"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uCK-x1-uaI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0x8-OV-I2E" firstAttribute="leading" secondItem="uCK-x1-uaI" secondAttribute="leading" id="JOr-Lv-rHh"/>
+                            <constraint firstItem="0x8-OV-I2E" firstAttribute="top" secondItem="uCK-x1-uaI" secondAttribute="top" id="RYb-M8-jRU"/>
+                            <constraint firstItem="uCK-x1-uaI" firstAttribute="trailing" secondItem="0x8-OV-I2E" secondAttribute="trailing" id="SvT-8i-D0J"/>
+                            <constraint firstItem="uCK-x1-uaI" firstAttribute="bottom" secondItem="0x8-OV-I2E" secondAttribute="bottom" id="xsW-7h-k8n"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Location" image="location" catalog="system" id="JL5-Fc-ugi"/>
+                    <connections>
+                        <outlet property="mapView" destination="0x8-OV-I2E" id="bUt-Tq-W8F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6V-01-KBP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61" y="-175"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="tNs-Mb-smh">
+            <objects>
+                <tabBarController id="d40-WS-5TL" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7da-ST-SAN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="QB3-OS-FIO" kind="relationship" relationship="viewControllers" id="3vv-dX-6Mo"/>
+                        <segue destination="Fcw-r6-JK2" kind="relationship" relationship="viewControllers" id="uz1-u3-1aR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ErA-IV-4AA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-830" y="127"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" catalog="system" width="128" height="121"/>
+        <image name="speedometer" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
