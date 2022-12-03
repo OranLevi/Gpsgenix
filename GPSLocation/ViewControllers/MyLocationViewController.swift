@@ -10,50 +10,173 @@ import MapKit
 import CoreLocation
 
 class MyLocationViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDelegate {
+    
+    // Views
+    @IBOutlet weak var longitudeView: UIView!
+    @IBOutlet weak var latitudeView: UIView!
+    @IBOutlet weak var locationView: UIView!
+    @IBOutlet weak var gpsStatsView: UIView!
+    @IBOutlet weak var altitudeView: UIView!
+    @IBOutlet weak var signalView: UIView!
 
+    // Map
     @IBOutlet weak var mapView: MKMapView!
     
+    // Labels
+    @IBOutlet weak var gpsStatusLabel: UILabel!
+    @IBOutlet weak var localityLabel: UILabel!
+    @IBOutlet weak var administrativeAreaLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var altitudeLabel: UILabel!
+    @IBOutlet weak var signalLabel: UILabel!
+    
     let locationManager = CLLocationManager()
+    var service = Service.shard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getLocation()
-    }
-
-    func getLocation() {
-        self.locationManager.requestAlwaysAuthorization()
-
-            self.locationManager.requestWhenInUseAuthorization()
-
-            if CLLocationManager.locationServicesEnabled() {
-                locationManager.delegate = self
-                locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                locationManager.startUpdatingLocation()
-            }
-
-            mapView.delegate = self
-            mapView.mapType = .standard
-
-            if let coor = mapView.userLocation.location?.coordinate{
-                mapView.setCenter(coor, animated: true)
-            }
+        statusGps()
+        setupView(view: longitudeView)
+        setupView(view: latitudeView)
+        setupView(view: locationView)
+        setupView(view: gpsStatsView)
+        setupView(view: altitudeView)
+        setupView(view: signalView)
     }
     
+    // MARK: - SetupViews
+    func setupView(view: UIView) {
+        view.layer.cornerRadius = 10
+        view.layer.borderWidth = 0.1
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view.layer.shadowRadius = 2.0
+        view.layer.shadowOpacity = 0.5
+        view.layer.masksToBounds = false
+    }
+    
+    // MARK: - Get Locations
+    func getLocation() {
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                self.locationManager.delegate = self
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                self.locationManager.startUpdatingLocation()
+            }
+        }
+    }
+
+    // MARK: - Get Status GPS
+    func statusGps() {
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                switch self.locationManager.authorizationStatus {
+                case .notDetermined:
+                    print("## No access GPS")
+                    DispatchQueue.main.async {
+                        self.gpsStatusLabel.text = "NO"
+                        self.gpsStatusLabel.textColor = UIColor.systemRed
+                    }
+                case .restricted :
+                    print("## restricted GPS")
+                case .denied:
+                    print("## denied GPS")
+                    DispatchQueue.main.async {
+                        self.service.showAlert(vc: self, message: "You must give permission to the location to use the application", openLocation: false)
+                        self.gpsStatusLabel.text = "NO"
+                        self.gpsStatusLabel.textColor = UIColor.systemRed
+                    }
+                case .authorizedAlways, .authorizedWhenInUse:
+                    print("## Access GPS")
+                    DispatchQueue.main.async {
+                        self.gpsStatusLabel.text = "YES"
+                        self.gpsStatusLabel.textColor = UIColor.systemGreen
+                    }
+                @unknown default:
+                    break
+                }
+            } else {
+                print("## Location services are not enabled")
+                DispatchQueue.main.async {
+                    self.service.showAlert(vc: self, message: "Location services are not enabled", openLocation: true)
+                }
+            }
+        }
+    }
+    
+// MARK: - LocationManager Update Locations
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-
-        mapView.mapType = MKMapType.standard
-
+        
+        statusGps()
+        
+        let userLocation :CLLocation = locations[0] as CLLocation
+        let locValue: CLLocationCoordinate2D = manager.location!.coordinate
+        
+        // Check Signal
+        if (userLocation.horizontalAccuracy < 0) {
+          print("NO SIGNAL")
+            signalLabel.text = "NO SIGNAL"
+            signalLabel.textColor = UIColor.systemRed
+       }
+       else if (userLocation.horizontalAccuracy > 163) {
+           print("Poor Signal")
+           signalLabel.text = "Poor Signal"
+           signalLabel.textColor = UIColor.systemYellow
+       }
+       else if (userLocation.horizontalAccuracy > 48) {
+           print("Average Signal")
+           signalLabel.text = "Average Signal"
+           signalLabel.textColor = UIColor.systemOrange
+       }
+       else {
+           print("Full Signal")
+           signalLabel.text = "Full Signal"
+           signalLabel.textColor = UIColor.systemGreen
+       }
+        
+        // Get Latitude and Longitude
+        print("user latitude = \(locValue.latitude)")
+        print("user longitude = \(locValue.longitude)")
+        latitudeLabel.text = String(locValue.latitude)
+        longitudeLabel.text = String(locValue.longitude)
+        altitudeLabel.text = String(userLocation.altitude)
+        
+        
+        // Get locality and administrativeArea and country
+        let geoCoder = CLGeocoder()
+        geoCoder.reverseGeocodeLocation(userLocation) { (placeMarks, error) in
+            if (error != nil){
+                print("error Geocode")
+            }
+            let placeMark = placeMarks
+            if placeMark?.count ?? 0 > 0 {
+                let placeMark = placeMarks![0]
+                print("\(placeMark.locality ?? "## locality N/A")")
+                print("\(placeMark.administrativeArea ?? "## administrativeArea N/A")")
+                print("\(placeMark.country ?? "## countryN/A")")
+             
+                self.localityLabel.text = placeMark.locality ?? "N/A"
+                self.administrativeAreaLabel.text = placeMark.administrativeArea ?? "N/A"
+                self.countryLabel.text = placeMark.country ?? "N/A"
+                
+            }
+        }
+        
+        mapView.mapType = MKMapType.satelliteFlyover
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: locValue, span: span)
         mapView.setRegion(region, animated: true)
-
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = locValue
-//        annotation.title = "Location"
-//        annotation.subtitle = "current location"
-//        mapView.addAnnotation(annotation)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = locValue
+        annotation.title = "current Location"
+        mapView.addAnnotation(annotation)
     }
-
 }
-
