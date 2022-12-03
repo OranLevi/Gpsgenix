@@ -16,7 +16,9 @@ class PlaceNameViewController: UIViewController,CLLocationManagerDelegate {
     
     //Buttons
     @IBOutlet weak var copyButton: UIButton!
-    
+    @IBOutlet weak var findButton: UIButton!
+    @IBOutlet weak var openMapButton: UIButton!
+
     // Text Filed
     @IBOutlet weak var planceNameText: UITextField!
     @IBOutlet weak var latitudeTextField: UITextField!
@@ -29,13 +31,20 @@ class PlaceNameViewController: UIViewController,CLLocationManagerDelegate {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView(view: placeNameView, borderWidth: 0.1, shadowRadius: 2.0)
-        setupView(view: resultView, borderWidth: 0.1, shadowRadius: 2.0)
-        scrollView.showsVerticalScrollIndicator = false
+        setupViews()
     }
     
     @IBAction func findButton(_ sender: Any) {
         getCoordinates(address: planceNameText.text ?? "")
+    }
+    
+    func setupViews() {
+        scrollView.showsVerticalScrollIndicator = false
+        setupView(view: placeNameView, borderWidth: 0.1, shadowRadius: 2.0)
+        setupView(view: resultView, borderWidth: 0.1, shadowRadius: 2.0)
+        copyButton.layer.cornerRadius = 5
+        findButton.layer.cornerRadius = 5
+        openMapButton.layer.cornerRadius = 5
     }
     
     func getCoordinates(address: String) {

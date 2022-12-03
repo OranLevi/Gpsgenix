@@ -517,16 +517,16 @@
                                                 <rect key="frame" x="16" y="16" width="382" height="190.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-sS-xW6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="140"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="140"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Place Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKu-K7-fxK">
-                                                                <rect key="frame" x="16" y="16" width="332" height="26.5"/>
+                                                                <rect key="frame" x="16" y="16" width="350" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R54-uU-NBV">
-                                                                <rect key="frame" x="16" y="58.5" width="332" height="34"/>
+                                                                <rect key="frame" x="16" y="58.5" width="350" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -536,7 +536,6 @@
                                                             <constraint firstItem="R54-uU-NBV" firstAttribute="leading" secondItem="YhT-sS-xW6" secondAttribute="leading" constant="16" id="6ta-Of-eIu"/>
                                                             <constraint firstItem="CKu-K7-fxK" firstAttribute="leading" secondItem="YhT-sS-xW6" secondAttribute="leading" constant="16" id="9JJ-39-iz1"/>
                                                             <constraint firstAttribute="trailing" secondItem="R54-uU-NBV" secondAttribute="trailing" constant="16" id="DYT-Vl-jvH"/>
-                                                            <constraint firstAttribute="width" constant="364" id="FKZ-Nm-dcT"/>
                                                             <constraint firstItem="R54-uU-NBV" firstAttribute="top" secondItem="CKu-K7-fxK" secondAttribute="bottom" constant="16" id="IIY-DG-QgJ"/>
                                                             <constraint firstItem="CKu-K7-fxK" firstAttribute="top" secondItem="YhT-sS-xW6" secondAttribute="top" constant="16" id="LrU-6r-q2J"/>
                                                             <constraint firstAttribute="trailing" secondItem="CKu-K7-fxK" secondAttribute="trailing" constant="16" id="ZoA-Iq-ISN"/>
@@ -544,15 +543,15 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Co-HZ-POM">
-                                                        <rect key="frame" x="0.0" y="156" width="364" height="34.5"/>
+                                                        <rect key="frame" x="0.0" y="156" width="382" height="34.5"/>
+                                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34.5" id="AbO-J1-XNN"/>
-                                                            <constraint firstAttribute="width" constant="364" id="yMv-Vo-07B"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Find">
-                                                            <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
-                                                        </buttonConfiguration>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Find">
+                                                            <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="findButton:" destination="rsL-Rt-qWY" eventType="touchUpInside" id="1mQ-ae-cfd"/>
                                                         </connections>
@@ -567,52 +566,54 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e40-CS-50b">
-                                                <rect key="frame" x="16" y="222.5" width="374" height="354"/>
+                                                <rect key="frame" x="16" y="222.5" width="382" height="354"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfs-aZ-wNa">
-                                                        <rect key="frame" x="16" y="16" width="342" height="26.5"/>
+                                                        <rect key="frame" x="16" y="16" width="350" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uxc-Th-nfY">
-                                                        <rect key="frame" x="16" y="101" width="342" height="34"/>
+                                                        <rect key="frame" x="16" y="101" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vd0-rN-2Zw">
-                                                        <rect key="frame" x="16" y="58.5" width="342" height="26.5"/>
+                                                        <rect key="frame" x="16" y="58.5" width="350" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pty-rf-o1l">
-                                                        <rect key="frame" x="16" y="193.5" width="342" height="34"/>
+                                                        <rect key="frame" x="16" y="193.5" width="350" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ok-tL-iFL">
-                                                        <rect key="frame" x="16" y="151" width="342" height="26.5"/>
+                                                        <rect key="frame" x="16" y="151" width="350" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-Wx-EQo">
-                                                        <rect key="frame" x="16" y="243.5" width="342" height="34.5"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Copy">
-                                                            <color key="baseBackgroundColor" systemColor="systemMintColor"/>
-                                                        </buttonConfiguration>
+                                                        <rect key="frame" x="16" y="243.5" width="350" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Copy">
+                                                            <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="copyButton:" destination="rsL-Rt-qWY" eventType="touchUpInside" id="hMM-7B-juB"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYm-9U-viw">
-                                                        <rect key="frame" x="16" y="294" width="342" height="34.5"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Open Map">
-                                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
-                                                        </buttonConfiguration>
+                                                        <rect key="frame" x="16" y="289.5" width="350" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Open Map">
+                                                            <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="openMapButton:" destination="rsL-Rt-qWY" eventType="touchUpInside" id="xdJ-I1-tNb"/>
                                                         </connections>
@@ -642,14 +643,13 @@
                                                     <constraint firstAttribute="trailing" secondItem="Pty-rf-o1l" secondAttribute="trailing" constant="16" id="mi4-iX-jQA"/>
                                                     <constraint firstItem="NZu-Wx-EQo" firstAttribute="leading" secondItem="e40-CS-50b" secondAttribute="leading" constant="16" id="tZM-UD-qdu"/>
                                                     <constraint firstItem="Gfs-aZ-wNa" firstAttribute="leading" secondItem="e40-CS-50b" secondAttribute="leading" constant="16" id="wgn-5b-pqa"/>
-                                                    <constraint firstAttribute="width" constant="374" id="xaf-Qf-evc"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="CpZ-iw-tfs" firstAttribute="leading" secondItem="rh5-Br-AQ4" secondAttribute="leading" constant="16" id="9EL-if-kI2"/>
-                                            <constraint firstAttribute="trailing" secondItem="e40-CS-50b" secondAttribute="trailing" constant="24" id="OOW-9y-e5d"/>
+                                            <constraint firstAttribute="trailing" secondItem="e40-CS-50b" secondAttribute="trailing" constant="16" id="OOW-9y-e5d"/>
                                             <constraint firstItem="e40-CS-50b" firstAttribute="top" secondItem="CpZ-iw-tfs" secondAttribute="bottom" constant="16" id="c0x-cZ-xxi"/>
                                             <constraint firstItem="e40-CS-50b" firstAttribute="leading" secondItem="rh5-Br-AQ4" secondAttribute="leading" constant="16" id="klK-tZ-RHl"/>
                                             <constraint firstAttribute="trailing" secondItem="CpZ-iw-tfs" secondAttribute="trailing" constant="16" id="lHl-30-z1Z"/>
@@ -680,8 +680,10 @@
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="copyButton" destination="NZu-Wx-EQo" id="4fl-3S-Ouc"/>
+                        <outlet property="findButton" destination="8Co-HZ-POM" id="88K-yM-JHr"/>
                         <outlet property="latitudeTextField" destination="uxc-Th-nfY" id="FB7-Hk-zLf"/>
                         <outlet property="longitudeTextField" destination="Pty-rf-o1l" id="2DL-bW-8rf"/>
+                        <outlet property="openMapButton" destination="YYm-9U-viw" id="MDA-IN-38c"/>
                         <outlet property="placeNameView" destination="YhT-sS-xW6" id="VcV-Wq-TMr"/>
                         <outlet property="planceNameText" destination="R54-uU-NBV" id="2xf-4i-Gog"/>
                         <outlet property="resultView" destination="e40-CS-50b" id="yYB-w4-3mP"/>
@@ -707,7 +709,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5Jb-QK-VcG">
-                                                <rect key="frame" x="16" y="16" width="382" height="321.5"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="317"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suh-6x-oCv">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="267"/>
@@ -763,11 +765,12 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esy-nm-Be5">
-                                                        <rect key="frame" x="0.0" y="287" width="382" height="34.5"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Find">
-                                                            <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
-                                                        </buttonConfiguration>
+                                                        <rect key="frame" x="0.0" y="287" width="382" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Find">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="findButton:" destination="lXE-8v-cAF" eventType="touchUpInside" id="fmK-Xx-DYC"/>
                                                         </connections>
@@ -775,7 +778,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B6s-vv-pTR">
-                                                <rect key="frame" x="16" y="353.5" width="382" height="700"/>
+                                                <rect key="frame" x="16" y="349" width="382" height="700"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFq-yL-yGn">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="700"/>
@@ -972,6 +975,7 @@
                         <outlet property="coordinatesView" destination="suh-6x-oCv" id="QAV-x4-vu2"/>
                         <outlet property="countryCodeTextField" destination="z4p-7p-jyn" id="hC8-wy-RbL"/>
                         <outlet property="countryTextField" destination="bgx-nY-XNk" id="qkK-Zu-iqw"/>
+                        <outlet property="findButton" destination="Esy-nm-Be5" id="P2D-Fe-Ibv"/>
                         <outlet property="latitudeTextField" destination="5Jg-Ra-Pww" id="SEI-0k-f9m"/>
                         <outlet property="localityTextField" destination="Rqm-HH-IRy" id="Kxk-4I-Uvq"/>
                         <outlet property="longitudeTextField" destination="ce3-YX-bdQ" id="cS5-2I-8j8"/>

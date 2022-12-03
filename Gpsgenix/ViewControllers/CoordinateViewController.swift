@@ -14,6 +14,9 @@ class CoordinateViewController: UIViewController,CLLocationManagerDelegate {
     // Scroll View
     @IBOutlet weak var scrollView: UIScrollView!
     
+    //Buttons
+    @IBOutlet weak var findButton: UIButton!
+    
     // TextFields
     @IBOutlet weak var latitudeTextField: UITextField!
     @IBOutlet weak var longitudeTextField: UITextField!
@@ -22,7 +25,6 @@ class CoordinateViewController: UIViewController,CLLocationManagerDelegate {
     @IBOutlet weak var missionDistrictTextField: UITextField!
     @IBOutlet weak var streetNameTextField: UITextField!
     @IBOutlet weak var postalCodeTextField: UITextField!
-    @IBOutlet weak var subThoroughfareTextField: UITextField!
     @IBOutlet weak var oceanTextField: UITextField!
     @IBOutlet weak var countryCodeTextField: UITextField!
     
@@ -34,9 +36,7 @@ class CoordinateViewController: UIViewController,CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView(view: coordinatesView, borderWidth: 0.1, shadowRadius: 2.0)
-        setupView(view: resultView, borderWidth: 0.1, shadowRadius: 2.0)
-        scrollView.showsVerticalScrollIndicator = false
+        setupViews()
     }
     
     @IBAction func findButton(_ sender: Any) {
@@ -57,6 +57,13 @@ class CoordinateViewController: UIViewController,CLLocationManagerDelegate {
             return
         }
         getAddressFromLatLon(latitude: inputLatitude!, longitude: inputLongitude!)
+    }
+    
+    func setupViews() {
+        scrollView.showsVerticalScrollIndicator = false
+        setupView(view: coordinatesView, borderWidth: 0.1, shadowRadius: 2.0)
+        setupView(view: resultView, borderWidth: 0.1, shadowRadius: 2.0)
+        findButton.layer.cornerRadius = 5
     }
     
     func getAddressFromLatLon(latitude: Double, longitude: Double) {
