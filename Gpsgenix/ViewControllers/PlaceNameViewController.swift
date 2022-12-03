@@ -49,6 +49,11 @@ class PlaceNameViewController: UIViewController,CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func copyButton(_ sender: Any) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = "\(latitudeTextField.text ?? ""), \(longitudeTextField.text ?? "")"
+    }
+    
     func getCoordinateFrom(address: String, completion: @escaping(_ coordinate: CLLocationCoordinate2D?, _ error: Error?) -> () ) {
         CLGeocoder().geocodeAddressString(address) { completion($0?.first?.location?.coordinate, $1) }
     }

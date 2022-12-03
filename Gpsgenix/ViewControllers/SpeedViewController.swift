@@ -38,6 +38,7 @@ class SpeedViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         locationManager.stopUpdatingLocation()
+        
     }
     
     // MARK: - Get Speeds
