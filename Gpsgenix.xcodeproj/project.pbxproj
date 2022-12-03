@@ -17,6 +17,9 @@
 		17755FE1293A651C00C30B25 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17755FE0293A651C00C30B25 /* Service.swift */; };
 		179922DB293A187700FB1CA4 /* SpeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179922DA293A187700FB1CA4 /* SpeedTableViewCell.swift */; };
 		179922DF293A362D00FB1CA4 /* SpeedCommonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179922DE293A362D00FB1CA4 /* SpeedCommonTableViewCell.swift */; };
+		179B87C7293B66AF00967ABF /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B87C6293B66AF00967ABF /* FindLocationViewController.swift */; };
+		17C3B3D0293B6F4C001F4A2A /* PlaceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C3B3CF293B6F4C001F4A2A /* PlaceNameViewController.swift */; };
+		17C3B3D2293B721A001F4A2A /* CoordinateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C3B3D1293B721A001F4A2A /* CoordinateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		17755FE0293A651C00C30B25 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		179922DA293A187700FB1CA4 /* SpeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTableViewCell.swift; sourceTree = "<group>"; };
 		179922DE293A362D00FB1CA4 /* SpeedCommonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedCommonTableViewCell.swift; sourceTree = "<group>"; };
+		179B87C6293B66AF00967ABF /* FindLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
+		17C3B3CF293B6F4C001F4A2A /* PlaceNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNameViewController.swift; sourceTree = "<group>"; };
+		17C3B3D1293B721A001F4A2A /* CoordinateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,9 @@
 			children = (
 				17007E98293A07AA00BF7314 /* MyLocationViewController.swift */,
 				17007EA8293A0C9C00BF7314 /* SpeedViewController.swift */,
+				179B87C6293B66AF00967ABF /* FindLocationViewController.swift */,
+				17C3B3CF293B6F4C001F4A2A /* PlaceNameViewController.swift */,
+				17C3B3D1293B721A001F4A2A /* CoordinateViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -166,9 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				179B87C7293B66AF00967ABF /* FindLocationViewController.swift in Sources */,
 				17007EA9293A0C9C00BF7314 /* SpeedViewController.swift in Sources */,
+				17C3B3D2293B721A001F4A2A /* CoordinateViewController.swift in Sources */,
 				17755FE1293A651C00C30B25 /* Service.swift in Sources */,
 				17007E99293A07AA00BF7314 /* MyLocationViewController.swift in Sources */,
+				17C3B3D0293B6F4C001F4A2A /* PlaceNameViewController.swift in Sources */,
 				179922DB293A187700FB1CA4 /* SpeedTableViewCell.swift in Sources */,
 				17007E95293A07AA00BF7314 /* AppDelegate.swift in Sources */,
 				179922DF293A362D00FB1CA4 /* SpeedCommonTableViewCell.swift in Sources */,
@@ -322,14 +334,15 @@
 				DEVELOPMENT_TEAM = JH7VUP2CH4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gpsgenix/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Gpsgenix;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application requires location services to work";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application requires location services to work<";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,14 +366,15 @@
 				DEVELOPMENT_TEAM = JH7VUP2CH4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gpsgenix/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Gpsgenix;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application requires location services to work";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application requires location services to work<";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

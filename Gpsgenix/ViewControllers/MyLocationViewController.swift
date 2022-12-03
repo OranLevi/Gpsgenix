@@ -37,25 +37,21 @@ class MyLocationViewController: UIViewController, CLLocationManagerDelegate,MKMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getLocation()
-        statusGps()
-        setupView(view: longitudeView)
-        setupView(view: latitudeView)
-        setupView(view: locationView)
-        setupView(view: gpsStatsView)
-        setupView(view: altitudeView)
-        setupView(view: signalView)
+        setupView(view: longitudeView, borderWidth: 0.1, shadowRadius: 2.0)
+        setupView(view: latitudeView, borderWidth: 0.1, shadowRadius: 2.0)
+        setupView(view: locationView, borderWidth: 0.1, shadowRadius: 2.0)
+        setupView(view: gpsStatsView, borderWidth: 0.1, shadowRadius: 2.0)
+        setupView(view: altitudeView, borderWidth: 0.1, shadowRadius: 2.0)
+        setupView(view: signalView, borderWidth: 0.1, shadowRadius: 2.0)
     }
     
-    // MARK: - SetupViews
-    func setupView(view: UIView) {
-        view.layer.cornerRadius = 10
-        view.layer.borderWidth = 0.1
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 0, height: 0)
-        view.layer.shadowRadius = 2.0
-        view.layer.shadowOpacity = 0.5
-        view.layer.masksToBounds = false
+    override func viewWillAppear(_ animated: Bool) {
+        getLocation()
+        statusGps()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        locationManager.stopUpdatingLocation()
     }
     
     // MARK: - Get Locations
@@ -88,7 +84,7 @@ class MyLocationViewController: UIViewController, CLLocationManagerDelegate,MKMa
                 case .denied:
                     print("## denied GPS")
                     DispatchQueue.main.async {
-                        self.service.showAlert(vc: self, message: "You must give permission to the location to use the application", openLocation: false)
+                        self.showAlert(vc: self, message: "You must give permission to the location to use the application", buttonTitle: "Setting", openSetting: false, openLocation: false, cancelButton: true)
                         self.gpsStatusLabel.text = "NO"
                         self.gpsStatusLabel.textColor = UIColor.systemRed
                     }
@@ -104,7 +100,7 @@ class MyLocationViewController: UIViewController, CLLocationManagerDelegate,MKMa
             } else {
                 print("## Location services are not enabled")
                 DispatchQueue.main.async {
-                    self.service.showAlert(vc: self, message: "Location services are not enabled", openLocation: true)
+                    self.showAlert(vc: self, message: "Location services are not enabled", buttonTitle: "Setting", openSetting: false, openLocation: true, cancelButton: true)
                 }
             }
         }

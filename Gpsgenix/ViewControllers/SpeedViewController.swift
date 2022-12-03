@@ -25,14 +25,22 @@ class SpeedViewController: UIViewController, CLLocationManagerDelegate {
     var ftminSpeed: String = "---"
     var ktSpeed: String = "---"
     var machSpeed: String = "---"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         speedTableView.dataSource = self
         speedTableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         getSpeed()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        locationManager.stopUpdatingLocation()
+    }
+    
+    // MARK: - Get Speeds
     func getSpeed() {
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
@@ -46,10 +54,11 @@ class SpeedViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // MARK: - Location Manager
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
+        
         let location = locations.last! as CLLocation
-                
+        
         let mph = location.speed * 2.23694
         let kmh = location.speed * 3.6
         let cms = location.speed * 100 // 1 m/s is 100 centimeters per second.
@@ -60,7 +69,7 @@ class SpeedViewController: UIViewController, CLLocationManagerDelegate {
         let mmin = location.speed * 60 //1 m/s is 60 meters per minute.
         let knots = location.speed * 1.94384 //1 m/s is 1.94384 knots.
         let mach = location.speed * 0.003018 //1 m/s is 0.003018 Maches.
-
+        
         mphSpeed = (location.speed<0) ? "--" : String(format: "%d", Int(mph))
         kmhSpeed = (location.speed<0) ? "--" : String(format: "%d", Int(kmh))
         cmsSpeed = (location.speed<0) ? "--" : String(format: "%d", Int(cms))
@@ -78,6 +87,7 @@ class SpeedViewController: UIViewController, CLLocationManagerDelegate {
     
 }
 
+// MARK: - extension TableView DataSource
 extension SpeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,7 +95,7 @@ extension SpeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SpeedCommonTableViewCell", for: indexPath) as! SpeedCommonTableViewCell
             cell.setupView()
@@ -127,6 +137,7 @@ extension SpeedViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - extension TableView Delegate
 extension SpeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {

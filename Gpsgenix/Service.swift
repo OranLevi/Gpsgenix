@@ -7,29 +7,52 @@
 
 import UIKit
 
+// MARK: - Service
 
 class Service {
-    
     static let shard = Service()
-    
-    func showAlert(vc: UIViewController, message: String, openLocation: Bool){
-            let alertController = UIAlertController (title: "Alert", message: message, preferredStyle: .alert)
-            
-            let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
-                
-                if (openLocation) {
-                    UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
-                } else {
-                    UIApplication.shared.open(URL(string: "App-prefs:LOCATION_SERVICES")!)
-                    
-                }
-            }
-            alertController.addAction(settingsAction)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-            alertController.addAction(cancelAction)
-            
-            vc.present(alertController, animated: true, completion: nil)
-        }
-    
 }
 
+// MARK: - extension UIViewController
+extension UIViewController {
+    
+    func setupView(view: UIView , borderWidth: Double , shadowRadius: Double) {
+        view.layer.cornerRadius = 10
+        view.layer.borderWidth = borderWidth
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view.layer.shadowRadius = shadowRadius
+        view.layer.shadowOpacity = 0.5
+        view.layer.masksToBounds = false
+    }
+    
+    func showAlert(vc: UIViewController, message: String, buttonTitle: String, openSetting: Bool, openLocation:Bool, cancelButton: Bool){
+        let alertController = UIAlertController (title: "Alert", message: message, preferredStyle: .alert)
+        
+        let settingsAction = UIAlertAction(title: buttonTitle , style: .default) { (_) -> Void in
+            
+            if (openSetting) {
+                UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+            }
+            if (openLocation) {
+                UIApplication.shared.open(URL(string: "App-prefs:LOCATION_SERVICES")!)
+            }
+        }
+        alertController.addAction(settingsAction)
+        if cancelButton {
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alertController.addAction(cancelAction)
+        }
+        vc.present(alertController, animated: true, completion: nil)
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
