@@ -14,6 +14,9 @@ class PlaceNameViewController: UIViewController,CLLocationManagerDelegate {
     // Scroll View
     @IBOutlet weak var scrollView: UIScrollView!
     
+    //Buttons
+    @IBOutlet weak var copyButton: UIButton!
+    
     // Text Filed
     @IBOutlet weak var planceNameText: UITextField!
     @IBOutlet weak var latitudeTextField: UITextField!
@@ -23,6 +26,7 @@ class PlaceNameViewController: UIViewController,CLLocationManagerDelegate {
     @IBOutlet weak var placeNameView: UIView!
     @IBOutlet weak var resultView: UIView!
     
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView(view: placeNameView, borderWidth: 0.1, shadowRadius: 2.0)
@@ -40,6 +44,8 @@ class PlaceNameViewController: UIViewController,CLLocationManagerDelegate {
             self.getCoordinateFrom(address: address) { coordinate, error in
                 guard let coordinate = coordinate, error == nil else {
                     self.showAlert(vc: self, message: "Not found place with this coordinate", buttonTitle: "OK", cancelButton: false, action: {
+                        self.latitudeTextField.text = nil
+                        self.longitudeTextField.text = nil
                         print("## Not found place with this coordinate")
                     })
                     return
@@ -57,8 +63,23 @@ class PlaceNameViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     @IBAction func copyButton(_ sender: Any) {
+        if latitudeTextField.text == "" || longitudeTextField.text == "" {
+            copyButton.setTitle("Latitude and Longitude is empty", for: .normal)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.copyButton.setTitle("Copy", for: .normal)
+                self.copyButton.setImage(UIImage(), for: .normal)
+            }
+            return
+        }
+        
         let pasteboard = UIPasteboard.general
         pasteboard.string = "\(latitudeTextField.text ?? ""), \(longitudeTextField.text ?? "")"
+        copyButton.setTitle("Copied", for: .normal)
+        copyButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.copyButton.setTitle("Copy", for: .normal)
+            self.copyButton.setImage(UIImage(), for: .normal)
+        }
     }
     
     @IBAction func openMapButton(_ sender: Any) {
@@ -68,7 +89,7 @@ class PlaceNameViewController: UIViewController,CLLocationManagerDelegate {
             })
             return
         } else {
-            let url = "http://maps.apple.com/maps?saddr=\(latitudeTextField.text!),\(longitudeTextField.text!)"
+            let url = "http://maps.apple.com/maps?ll=\(latitudeTextField.text!),\(longitudeTextField.text!)"
             print(url)
             UIApplication.shared.open(URL(string: "\(url)")!)
 

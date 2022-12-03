@@ -550,7 +550,9 @@
                                                             <constraint firstAttribute="width" constant="364" id="yMv-Vo-07B"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Find"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Find">
+                                                            <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                                        </buttonConfiguration>
                                                         <connections>
                                                             <action selector="findButton:" destination="rsL-Rt-qWY" eventType="touchUpInside" id="1mQ-ae-cfd"/>
                                                         </connections>
@@ -598,7 +600,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-Wx-EQo">
                                                         <rect key="frame" x="16" y="243.5" width="342" height="34.5"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Copy"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Copy">
+                                                            <color key="baseBackgroundColor" systemColor="systemMintColor"/>
+                                                        </buttonConfiguration>
                                                         <connections>
                                                             <action selector="copyButton:" destination="rsL-Rt-qWY" eventType="touchUpInside" id="hMM-7B-juB"/>
                                                         </connections>
@@ -606,7 +610,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYm-9U-viw">
                                                         <rect key="frame" x="16" y="294" width="342" height="34.5"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Open Map"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Open Map">
+                                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                                        </buttonConfiguration>
                                                         <connections>
                                                             <action selector="openMapButton:" destination="rsL-Rt-qWY" eventType="touchUpInside" id="xdJ-I1-tNb"/>
                                                         </connections>
@@ -673,6 +679,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
+                        <outlet property="copyButton" destination="NZu-Wx-EQo" id="4fl-3S-Ouc"/>
                         <outlet property="latitudeTextField" destination="uxc-Th-nfY" id="FB7-Hk-zLf"/>
                         <outlet property="longitudeTextField" destination="Pty-rf-o1l" id="2DL-bW-8rf"/>
                         <outlet property="placeNameView" destination="YhT-sS-xW6" id="VcV-Wq-TMr"/>
@@ -758,7 +765,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esy-nm-Be5">
                                                         <rect key="frame" x="0.0" y="287" width="382" height="34.5"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Find"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Find">
+                                                            <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                                        </buttonConfiguration>
                                                         <connections>
                                                             <action selector="findButton:" destination="lXE-8v-cAF" eventType="touchUpInside" id="fmK-Xx-DYC"/>
                                                         </connections>
@@ -794,7 +803,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission District:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzD-ws-mqi">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="District:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzD-ws-mqi">
                                                                 <rect key="frame" x="16" y="201" width="350" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                                 <nil key="textColor"/>
@@ -988,6 +997,15 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
