@@ -84,7 +84,9 @@ class MyLocationViewController: UIViewController, CLLocationManagerDelegate,MKMa
                 case .denied:
                     print("## denied GPS")
                     DispatchQueue.main.async {
-                        self.showAlert(vc: self, message: "You must give permission to the location to use the application", buttonTitle: "Setting", openSetting: false, openLocation: false, cancelButton: true)
+                        self.showAlert(vc: self, message: "You must give permission to the Location", buttonTitle: "Setting", cancelButton: true, action: {
+                            UIApplication.shared.open(URL(string: "App-prefs:LOCATION_SERVICES")!)
+                        })
                         self.gpsStatusLabel.text = "NO"
                         self.gpsStatusLabel.textColor = UIColor.systemRed
                     }
@@ -100,7 +102,9 @@ class MyLocationViewController: UIViewController, CLLocationManagerDelegate,MKMa
             } else {
                 print("## Location services are not enabled")
                 DispatchQueue.main.async {
-                    self.showAlert(vc: self, message: "Location services are not enabled", buttonTitle: "Setting", openSetting: false, openLocation: true, cancelButton: true)
+                    self.showAlert(vc: self, message: "Location services are not enabled", buttonTitle: "Setting", cancelButton: false, action: {
+                        UIApplication.shared.open(URL(string: "App-prefs:LOCATION_SERVICES")!)
+                    })
                 }
             }
         }

@@ -26,17 +26,11 @@ extension UIViewController {
         view.layer.masksToBounds = false
     }
     
-    func showAlert(vc: UIViewController, message: String, buttonTitle: String, openSetting: Bool, openLocation:Bool, cancelButton: Bool){
+    func showAlert(vc: UIViewController, message: String, buttonTitle: String, cancelButton: Bool, action: @escaping () -> ()){
         let alertController = UIAlertController (title: "Alert", message: message, preferredStyle: .alert)
         
         let settingsAction = UIAlertAction(title: buttonTitle , style: .default) { (_) -> Void in
-            
-            if (openSetting) {
-                UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
-            }
-            if (openLocation) {
-                UIApplication.shared.open(URL(string: "App-prefs:LOCATION_SERVICES")!)
-            }
+            action()
         }
         alertController.addAction(settingsAction)
         if cancelButton {

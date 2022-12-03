@@ -45,11 +45,15 @@ class CoordinateViewController: UIViewController,CLLocationManagerDelegate {
         let inputLongitude = Double(longitudeTextField.text!)
         
         guard inputLatitude != nil else {
-            showAlert(vc: self, message: "Invalid entry Latitude. Try again.", buttonTitle: "Ok", openSetting: false, openLocation: false, cancelButton: false)
+            showAlert(vc: self, message: "Invalid entry Latitude. Try again.", buttonTitle: "Ok", cancelButton: false, action: {
+                print("## Invalid entry Latitude. Try again.")
+            })
             return
         }
         guard inputLongitude != nil else {
-            showAlert(vc: self, message: "Invalid entry Longitude. Try again.", buttonTitle: "Ok", openSetting: false, openLocation: false, cancelButton: false)
+            showAlert(vc: self, message: "Invalid entry Longitude. Try again.", buttonTitle: "Ok", cancelButton: false, action: {
+                print("## Invalid entry Longitude. Try again.")
+            })
             return
         }
         getAddressFromLatLon(latitude: inputLatitude!, longitude: inputLongitude!)
@@ -70,7 +74,9 @@ class CoordinateViewController: UIViewController,CLLocationManagerDelegate {
                                             {(placemarks, error) in
             if (error != nil) {
                 print("reverse geodcode fail: \(error!.localizedDescription)")
-                self.showAlert(vc: self, message: "Get Coordinates Failed!", buttonTitle: "Ok", openSetting: false, openLocation: false, cancelButton: false)
+                self.showAlert(vc: self, message: "Get Coordinates Failed!", buttonTitle: "Ok", cancelButton: false, action: {
+                    print("## Get Coordinates Failed!")
+                })
                 return
             }
             let pm = placemarks! as [CLPlacemark]
