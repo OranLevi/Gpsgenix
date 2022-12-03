@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  GPSLocation
+//  Gpsgenix
 //
 //  Created by Oran Levi on 02/12/2022.
 //

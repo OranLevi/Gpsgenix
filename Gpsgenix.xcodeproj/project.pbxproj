@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17007E91293A07AA00BF7314 /* GPSLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17007E91293A07AA00BF7314 /* Gpsgenix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gpsgenix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17007E94293A07AA00BF7314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17007E96293A07AA00BF7314 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		17007E98293A07AA00BF7314 /* MyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		17007E88293A07AA00BF7314 = {
 			isa = PBXGroup;
 			children = (
-				17007E93293A07AA00BF7314 /* GPSLocation */,
+				17007E93293A07AA00BF7314 /* Gpsgenix */,
 				17007E92293A07AA00BF7314 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,12 +56,12 @@
 		17007E92293A07AA00BF7314 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17007E91293A07AA00BF7314 /* GPSLocation.app */,
+				17007E91293A07AA00BF7314 /* Gpsgenix.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17007E93293A07AA00BF7314 /* GPSLocation */ = {
+		17007E93293A07AA00BF7314 /* Gpsgenix */ = {
 			isa = PBXGroup;
 			children = (
 				17007E94293A07AA00BF7314 /* AppDelegate.swift */,
@@ -74,7 +74,7 @@
 				17007E9F293A07AB00BF7314 /* LaunchScreen.storyboard */,
 				17007EA2293A07AB00BF7314 /* Info.plist */,
 			);
-			path = GPSLocation;
+			path = Gpsgenix;
 			sourceTree = "<group>";
 		};
 		179922DC293A220A00FB1CA4 /* ViewControllers */ = {
@@ -98,9 +98,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17007E90293A07AA00BF7314 /* GPSLocation */ = {
+		17007E90293A07AA00BF7314 /* Gpsgenix */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17007EA5293A07AB00BF7314 /* Build configuration list for PBXNativeTarget "GPSLocation" */;
+			buildConfigurationList = 17007EA5293A07AB00BF7314 /* Build configuration list for PBXNativeTarget "Gpsgenix" */;
 			buildPhases = (
 				17007E8D293A07AA00BF7314 /* Sources */,
 				17007E8E293A07AA00BF7314 /* Frameworks */,
@@ -110,9 +110,9 @@
 			);
 			dependencies = (
 			);
-			name = GPSLocation;
+			name = Gpsgenix;
 			productName = GPSLocation;
-			productReference = 17007E91293A07AA00BF7314 /* GPSLocation.app */;
+			productReference = 17007E91293A07AA00BF7314 /* Gpsgenix.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 17007E8C293A07AA00BF7314 /* Build configuration list for PBXProject "GPSLocation" */;
+			buildConfigurationList = 17007E8C293A07AA00BF7314 /* Build configuration list for PBXProject "Gpsgenix" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,7 +143,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17007E90293A07AA00BF7314 /* GPSLocation */,
+				17007E90293A07AA00BF7314 /* Gpsgenix */,
 			);
 		};
 /* End PBXProject section */
@@ -321,7 +321,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JH7VUP2CH4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GPSLocation/Info.plist;
+				INFOPLIST_FILE = Gpsgenix/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application requires location services to work";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application requires location services to work<";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -333,7 +335,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Oran.GPSLocation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Oran.Gpsgenix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -350,7 +352,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JH7VUP2CH4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GPSLocation/Info.plist;
+				INFOPLIST_FILE = Gpsgenix/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application requires location services to work";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application requires location services to work<";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -362,7 +366,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Oran.GPSLocation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Oran.Gpsgenix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -373,7 +377,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17007E8C293A07AA00BF7314 /* Build configuration list for PBXProject "GPSLocation" */ = {
+		17007E8C293A07AA00BF7314 /* Build configuration list for PBXProject "Gpsgenix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17007EA3293A07AB00BF7314 /* Debug */,
@@ -382,7 +386,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17007EA5293A07AB00BF7314 /* Build configuration list for PBXNativeTarget "GPSLocation" */ = {
+		17007EA5293A07AB00BF7314 /* Build configuration list for PBXNativeTarget "Gpsgenix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17007EA6293A07AB00BF7314 /* Debug */,

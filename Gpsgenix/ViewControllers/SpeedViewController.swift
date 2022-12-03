@@ -1,6 +1,6 @@
 //
 //  SpeedViewController.swift
-//  GPSLocation
+//  Gpsgenix
 //
 //  Created by Oran Levi on 02/12/2022.
 //
@@ -52,14 +52,14 @@ class SpeedViewController: UIViewController, CLLocationManagerDelegate {
                 
         let mph = location.speed * 2.23694
         let kmh = location.speed * 3.6
-        let cms = location.speed * 100 // 1 meter per second is 100 centimeters per second.
-        let mms = location.speed * 1000 // 1 meter per second is 1000 milimeters per second.
-        let fts = location.speed * 3.28084 // 1 meter per second is 3.28084 feet per second.
-        let mh = location.speed * 3600 // 1 meter per second is 3600 meters per hour.
-        let fth = location.speed * 11811.02364 // 1 meter per second is 11811.02364 feet per hour.
-        let mmin = location.speed * 60 //1 meter per second is 60 meters per minute.
-        let knots = location.speed * 1.94384 //1 meter per second is 1.94384 knots.
-        let mach = location.speed * 0.003018 //1 meter per second is 0.003018 Maches.
+        let cms = location.speed * 100 // 1 m/s is 100 centimeters per second.
+        let mms = location.speed * 1000 // 1 m/s is 1000 milimeters per second.
+        let fts = location.speed * 3.28084 // 1 m/s is 3.28084 feet per second.
+        let mh = location.speed * 3600 // 1 m/s is 3600 meters per hour.
+        let fth = location.speed * 11811.02364 // 1 m/s is 11811.02364 feet per hour.
+        let mmin = location.speed * 60 //1 m/s is 60 meters per minute.
+        let knots = location.speed * 1.94384 //1 m/s is 1.94384 knots.
+        let mach = location.speed * 0.003018 //1 m/s is 0.003018 Maches.
 
         mphSpeed = (location.speed<0) ? "--" : String(format: "%d", Int(mph))
         kmhSpeed = (location.speed<0) ? "--" : String(format: "%d", Int(kmh))
