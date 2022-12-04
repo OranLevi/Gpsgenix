@@ -514,7 +514,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CpZ-iw-tfs">
-                                                <rect key="frame" x="16" y="16" width="382" height="190.5"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="191"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-sS-xW6">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="140"/>
@@ -543,10 +543,10 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Co-HZ-POM">
-                                                        <rect key="frame" x="0.0" y="156" width="382" height="34.5"/>
+                                                        <rect key="frame" x="0.0" y="156" width="382" height="35"/>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="34.5" id="AbO-J1-XNN"/>
+                                                            <constraint firstAttribute="height" constant="35" id="AbO-J1-XNN"/>
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Find">
@@ -566,7 +566,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e40-CS-50b">
-                                                <rect key="frame" x="16" y="222.5" width="382" height="354"/>
+                                                <rect key="frame" x="16" y="223" width="382" height="354"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfs-aZ-wNa">
                                                         <rect key="frame" x="16" y="16" width="350" height="26.5"/>
@@ -597,8 +597,11 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-Wx-EQo">
-                                                        <rect key="frame" x="16" y="243.5" width="350" height="30"/>
+                                                        <rect key="frame" x="16" y="243.5" width="350" height="35"/>
                                                         <color key="backgroundColor" systemColor="systemMintColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="j5y-DY-EdT"/>
+                                                        </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Copy">
                                                             <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -608,8 +611,11 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYm-9U-viw">
-                                                        <rect key="frame" x="16" y="289.5" width="350" height="30"/>
+                                                        <rect key="frame" x="16" y="294.5" width="350" height="35"/>
                                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="WwK-CE-eCV"/>
+                                                        </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Open Map">
                                                             <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -709,7 +715,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5Jb-QK-VcG">
-                                                <rect key="frame" x="16" y="16" width="382" height="317"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="322"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suh-6x-oCv">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="267"/>
@@ -765,8 +771,11 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esy-nm-Be5">
-                                                        <rect key="frame" x="0.0" y="287" width="382" height="30"/>
+                                                        <rect key="frame" x="0.0" y="287" width="382" height="35"/>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="sda-16-jeh"/>
+                                                        </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Find">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -778,7 +787,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B6s-vv-pTR">
-                                                <rect key="frame" x="16" y="349" width="382" height="700"/>
+                                                <rect key="frame" x="16" y="354" width="382" height="700"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFq-yL-yGn">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="700"/>
